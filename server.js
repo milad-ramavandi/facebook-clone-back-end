@@ -75,7 +75,7 @@ const server = http.createServer((req, res) => {
         if (error) {
           throw error;
         }
-        res.writeHead(201, { "Content-Type": "application/json", "access-control-allow-origin":"*" });
+        res.writeHead(201, { "Content-Type": "application/json", "access-control-allow-origin":"*", "access-control-allow-credentials":true, "access-control-allow-methods":"POST" });
         res.write(JSON.stringify({ message: "Add post succesfully" }));
         res.end();
       });
