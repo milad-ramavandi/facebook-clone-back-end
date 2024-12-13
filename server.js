@@ -11,7 +11,7 @@ const server = http.createServer((req, res) => {
         throw error;
       }
       const posts = JSON.parse(data).posts;
-      res.writeHead(200, { "Content-Type": "application/json" });
+      res.writeHead(200, { "Content-Type": "application/json", "access-control-allow-origin":"*" });
       res.write(JSON.stringify(posts));
       res.end();
       return;
@@ -22,7 +22,7 @@ const server = http.createServer((req, res) => {
         throw error;
       }
       const stories = JSON.parse(data).stories;
-      res.writeHead(200, { "Content-Type": "application/json" });
+      res.writeHead(200, { "Content-Type": "application/json", "access-control-allow-origin":"*" });
       res.write(JSON.stringify(stories));
       res.end();
       return;
@@ -33,7 +33,7 @@ const server = http.createServer((req, res) => {
         throw error;
       }
       const contacts = JSON.parse(data).contacts;
-      res.writeHead(200, { "Content-Type": "application/json" });
+      res.writeHead(200, { "Content-Type": "application/json", "access-control-allow-origin":"*" });
       res.write(JSON.stringify(contacts));
       res.end();
       return;
@@ -53,13 +53,13 @@ const server = http.createServer((req, res) => {
           if (error) {
             throw error;
           }
-          res.writeHead(200, { "Content-Type": "application/json" });
+          res.writeHead(200, { "Content-Type": "application/json" , "access-control-allow-origin":"*" });
           res.write(JSON.stringify({ message: "Remove post successfully" }));
           res.end();
         }
       );
     } else {
-      res.writeHead(401, { "Content-Type": "application/json" });
+      res.writeHead(401, { "Content-Type": "application/json", "access-control-allow-origin":"*" });
       res.write(JSON.stringify({ message: "post not exist" }));
       res.end();
     }
@@ -75,7 +75,7 @@ const server = http.createServer((req, res) => {
         if (error) {
           throw error;
         }
-        res.writeHead(201, { "Content-Type": "application/json" });
+        res.writeHead(201, { "Content-Type": "application/json", "access-control-allow-origin":"*" });
         res.write(JSON.stringify({ message: "Add post succesfully" }));
         res.end();
       });
