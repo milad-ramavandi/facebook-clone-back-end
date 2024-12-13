@@ -5,7 +5,7 @@ const db = require("./db.json");
 
 const server = http.createServer((req, res) => {
   const options = {
-    "Access-Control-Allow-Origin": "https://facebook-clone-front-end-ebon.vercel.app",
+    "Access-Control-Allow-Origin": ["https://facebook-clone-front-end-ebon.vercel.app", "http://localhost:3000"],
     "Access-Control-Allow-Methods": "GET,OPTIONS,PATCH,DELETE,POST,PUT",
     "Access-Control-Allow-Credentials": true,
     "Content-Type": "application/json"
