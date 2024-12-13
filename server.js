@@ -16,6 +16,10 @@ const server = http.createServer((req, res) => {
       res.end();
       return;
     });
+  } else if (req.method === "GET" && req.url === '/') {
+    res.writeHead(200, {"content-type":"text/html"})
+    res.write("<h2>Welcome to Nodejs back-end Facebook-Clone project</h2>")
+    res.end()
   } else if (req.url === "/stories" && req.method === "GET") {
     fs.readFile("./db.json", "utf-8", (error, data) => {
       if (error) {
