@@ -7,6 +7,8 @@ const server = http.createServer((req, res) => {
   const options = {
     "Content-Type": "application/json",
     "access-control-allow-origin": "*",
+    "access-control-allow-methods":"GET,POST,PUT,DELETE"
+    
   };
   if (req.url === "/posts" && req.method === "GET") {
     fs.readFile("./db.json", "utf-8", (error, data) => {
@@ -80,7 +82,7 @@ const server = http.createServer((req, res) => {
         if (error) {
           throw error;
         }
-        res.writeHead(201, options);
+        res.writeHead(201, options, {'access-control-allow-methods':"g"});
         res.write(JSON.stringify({ message: "Add post succesfully" }));
         res.end();
       });
