@@ -79,7 +79,7 @@ const server = http.createServer((req, res) => {
         if (error) {
           throw error;
         }
-        res.writeHead(201, { "Content-Type": "application/json", "access-control-allow-origin":"*", "access-control-allow-credentials":true, "access-control-allow-methods":"POST" });
+        res.writeHead(201, { "Content-Type": "application/json", "access-control-allow-origin":"https://facebook-clone-front-end-ebon.vercel.app"});
         res.write(JSON.stringify({ message: "Add post succesfully" }));
         res.end();
       });
