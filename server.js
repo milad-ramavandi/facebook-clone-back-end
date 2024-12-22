@@ -1,11 +1,12 @@
 const http = require("http");
+require("dotenv").config();
 
 const {getAllPostsController, deletePostController, createPostController} = require("./controllers/postController");
 const {getAllContactsController} = require("./controllers/contactController");
 const {getAllStoriesController, addStoryController, deleteStoryController} = require("./controllers/storyController");
 const server = http.createServer((req, res) => {
   const options = {
-    "access-control-allow-origin":"http://localhost:3000",
+    "access-control-allow-origin":`${process.env.ALLOW_ORIGIN}`,
     "access-control-allow-methods":"POST,GET,PUT,DELETE,OPTIONS",
     "access-control-allow-headers":"*"
   }
